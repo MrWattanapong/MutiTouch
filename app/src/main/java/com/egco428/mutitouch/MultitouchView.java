@@ -27,6 +27,7 @@ public class MultitouchView extends View {
 
     public MultitouchView(Context context, AttributeSet attrs){
         super(context,attrs);
+        initView();
     }
 
     private void initView(){
@@ -42,7 +43,7 @@ public class MultitouchView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        for (int size = mActivePointers.size(), i=-; i<size; i++){
+        for (int size = mActivePointers.size(), i=0; i<size; i++){
             PointF point = mActivePointers.valueAt(i);
             if (point != null){
                 mPaint.setColor(colors[i%9]);
